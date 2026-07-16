@@ -36,6 +36,9 @@ A simple, fully containerized **PHP + PDO + MySQL** CRUD application for managin
 **Create a new person**
 ![Create Person](./screenshots/create-person.png)
 
+**Update an existing person**
+![Update Person](./screenshots/update-person.png)
+
 **Delete confirmation dialog**
 ![Delete Confirmation](./screenshots/delete-confirm.png)
 
