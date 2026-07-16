@@ -86,7 +86,36 @@ The `people` table and sample rows are created automatically on first run via `i
 ├── header.php / footer.php   # shared layout (Bootstrap 5)
 └── screenshots/              # README preview images
 ```
+## 🐛 Troubleshooting
 
+### Container name conflict on `docker compose up --build`
+
+**Error:**
+
+```text
+Error response from daemon: Conflict. The container name "/mysql_db" is already in use by container "...".
+You have to remove (or rename) that container to be able to reuse that name.
+```
+
+**Cause:**
+
+A container with the same name (`mysql_db`, `php_app`, or `phpmyadmin`) already exists from a previous run of this project (or another clone of it) on your machine. Docker Compose doesn't allow two containers to share the same name.
+
+**Fix:**
+
+Remove the old container(s), then rebuild:
+
+```bash
+docker rm -f mysql_db php_app phpmyadmin
+docker compose up --build
+```
+
+If you also want to wipe the old database data and start completely fresh:
+
+```bash
+docker compose down -v
+docker compose up --build
+```
 ---
 
 ## 🔒 Notes
