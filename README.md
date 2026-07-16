@@ -94,6 +94,8 @@ The `people` table and sample rows are created automatically on first run via `i
 - Database credentials are injected via environment variables in `docker-compose.yml`, keeping `db.php` free of hardcoded secrets.
 - `root_password` in this repo is a **local development-only** placeholder and is not used in any production context.
 
+---
+
 ## 🐛 Troubleshooting
 
 ### Container name conflict on `docker compose up --build`
